@@ -5,11 +5,12 @@ import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/
 const canvas = document.querySelector(".webgl");
 const scene = new THREE.Scene();
 const gltfLoader = new GLTFLoader();
-gltfLoader.load("assets/washing_machine.glb", function(glb){
-  console.log(glb)
-  const root = glb.scene
-  scene.add(root)
-})
+var root
+gltfLoader.load("assets/washing_machine.glb", function (glb) {
+  console.log(glb);
+  root = glb.scene;
+  scene.add(root);
+});
 
 // Object
 // const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -21,11 +22,9 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
 directionalLight.position.set(20, 20, 10);
 scene.add(directionalLight);
 
-const directionalLight2 = new THREE.DirectionalLight(0xffffff, .5);
+const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
 directionalLight2.position.set(-10, -10, -20);
 scene.add(directionalLight2);
-
-
 
 // Sizes
 const sizes = {
@@ -70,6 +69,8 @@ renderer.shadowMap.enabled = true;
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
+  root.rotation.x += 0.01
+  root.rotation.y += 0.01
 }
 
 animate();
