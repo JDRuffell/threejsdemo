@@ -1,19 +1,31 @@
 import { OrbitControls } from "https://unpkg.com/three@0.127.0/examples/jsm/controls/OrbitControls.js";
 import * as THREE from "https://unpkg.com/three@0.127.0/build/three.module.js";
+import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/GLTFLoader.js";
 
 const canvas = document.querySelector(".webgl");
 const scene = new THREE.Scene();
+const gltfLoader = new GLTFLoader();
+gltfLoader.load("assets/washing_machine.glb", function(glb){
+  console.log(glb)
+  const root = glb.scene
+  scene.add(root)
+})
 
 // Object
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshStandardMaterial({ color: 0x0f0f0f });
-const mesh = new THREE.Mesh(geometry, material);
+// const geometry = new THREE.BoxGeometry(1, 1, 1);
+// const material = new THREE.MeshStandardMaterial({ color: 0x0f0f0f });
+// const mesh = new THREE.Mesh(geometry, material);
+// scene.add(mesh);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
 directionalLight.position.set(20, 20, 10);
 scene.add(directionalLight);
 
-scene.add(mesh);
+const directionalLight2 = new THREE.DirectionalLight(0xffffff, .5);
+directionalLight2.position.set(-10, -10, -20);
+scene.add(directionalLight2);
+
+
 
 // Sizes
 const sizes = {
