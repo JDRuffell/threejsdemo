@@ -69,8 +69,8 @@ renderer.shadowMap.enabled = true;
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
-  root.rotation.x += 0.01
-  root.rotation.y += 0.01
+  // root.rotation.x += 0.01
+  // root.rotation.y += 0.01
 }
 
 animate();
