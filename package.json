@@ -5,10 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy":"gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDRuffell/threejsdemo.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JDRuffell/threejsdemo/issues"
+  },
+  "homepage": "https://github.com/JDRuffell/threejsdemo#readme",
   "dependencies": {
     "gh-pages": "^4.0.0"
   }
