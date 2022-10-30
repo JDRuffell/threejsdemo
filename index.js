@@ -45,13 +45,12 @@ window.addEventListener("resize", () => {
 });
 
 // Camera
-const camera = new THREE.PerspectiveCamera(
-  75,
-  sizes.width / sizes.height,
-  0.1,
-  100
-);
-camera.position.set(0, 1, 2);
+const fov = 75;
+const aspect = sizes.width / sizes.height;
+const near = 0.1;
+const far = 100;
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+camera.position.set(5, 6, 7);
 scene.add(camera);
 
 // Controls
