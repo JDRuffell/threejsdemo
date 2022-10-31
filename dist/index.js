@@ -6,7 +6,7 @@ const canvas = document.querySelector(".webgl");
 const scene = new THREE.Scene();
 const gltfLoader = new GLTFLoader();
 var root
-gltfLoader.load("assets/Glorious Wluff-Hillar.glb", function (glb) {
+gltfLoader.load("assets/iClickerRemoteJoin.glb", function (glb) {
   console.log(glb);
   root = glb.scene;
   scene.add(root);
